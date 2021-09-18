@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +16,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnAddClicked(View view) {
-        int rs = 10;
-        Toast.makeText(getApplicationContext(), "결과 : " + rs, Toast.LENGTH_SHORT).show();
+        EditText editTextNum1 = findViewById(R.id.activity_main__editTextNum1);
+        EditText editTextNum2 = findViewById(R.id.activity_main__editTextNum2);
+
+        //혹시나 있을 양옆 공백 제거
+        editTextNum1.setText(editTextNum1.getText().toString().trim());
+
+        if (editTextNum1.getText().toString().length() == 0) {
+            toastMsg("숫자1을 입력 해 주세요.");
+            editTextNum1.requestFocus();
+            return;
+        }
+
+        //num2
+        editTextNum2.setText(editTextNum2.getText().toString().trim());
+
+        if (editTextNum2.getText().toString().length() == 0) {
+            toastMsg("숫자2를 입력 해 주세요.");
+            editTextNum2.requestFocus();
+            return;
+        }
+
+
+        int num1 = Integer.parseInt(editTextNum1.getText().toString());
+        int num2 = Integer.parseInt(editTextNum2.getText().toString());
+
+        int rs = num1 + num2;
+        toastMsg("결과 : " + rs);
+    }
+
+    void toastMsg(String msg) {
+        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
     }
 }
