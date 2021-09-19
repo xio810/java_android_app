@@ -8,22 +8,33 @@
 
     <EditText
         android:id="@+id/activity_main__editTextNum1"
-        android:inputType="numberDecimal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="숫자를 입력해주세요." />
+        android:hint="숫자를 입력해주세요."
+        android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/activity_main__editTextNum2"
-        android:inputType="numberDecimal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="숫자를 입력해주세요." />
+        android:hint="숫자를 입력해주세요."
+        android:inputType="numberDecimal" />
 
     <Button
-        android:onClick="btnAddClicked"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="btnAddClicked"
         android:text="더하기" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnClearClicked"
+        android:text="지우기" />
+
+    <TextView
+        android:id="@+id/activity_main__textViewRs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
